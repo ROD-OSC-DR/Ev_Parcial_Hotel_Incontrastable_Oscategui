@@ -1,0 +1,7 @@
+**/bin/
+**/obj/
+**/node_modules/
+/frontend/dist/
+.vs/
+*.user
+/EV. PARCIAL - DAW - CONSIGNA DE EVALUACIÓN.pdf

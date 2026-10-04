@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5ef">
+    <meta name="description" content="Conoce los servicios incluidos y adicionales de Hotel Incontrastable.">
+    <title>Servicios | Hotel Incontrastable</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./config.js"></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="demo-ribbon">DEMO · HUANCAYO, PERÚ</div>
+    <header class="site-header sticky-top">
+      <nav class="navbar navbar-expand-lg container-xl" aria-label="Navegación principal">
+        <a class="navbar-brand brand-lockup" href="./index.html" aria-label="Hotel Incontrastable, inicio">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M4 29 15 12l6 9 5-7 10 15H4Z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><path d="M8 33h24M13 26h13" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></svg></span>
+          <span class="brand-name">Hotel <strong>Incontrastable</strong><small>HUANCAYO · PERÚ</small></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="site-nav">
+          <ul class="navbar-nav mx-auto gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="./habitaciones.html">Habitaciones</a></li>
+            <li class="nav-item"><a class="nav-link" href="./servicios.html" aria-current="page">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="./promociones.html">Promociones</a></li>
+          </ul>
+          <button class="btn btn-cart" type="button" data-open-cart><span aria-hidden="true">▱</span> Mi selección <span class="cart-count" data-cart-count>0</span></button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="page-hero page-hero-dark" aria-labelledby="page-title">
+        <div class="container-xl page-hero-inner">
+          <p class="eyebrow eyebrow-light">PEQUEÑOS DETALLES, GRAN DIFERENCIA</p>
+          <h1 id="page-title">Un poco más de <em>bienestar.</em></h1>
+          <p>Lo esencial para sentirte cómodo y los extras que vuelven especial tu estadía.</p>
+          <a class="page-back-link" href="./index.html">← Volver al inicio</a>
+        </div>
+      </section>
+      <section class="services-section section-pad" aria-labelledby="services-title">
+        <div class="container-xl">
+          <div class="section-heading">
+            <div><p class="eyebrow eyebrow-light">PENSADOS PARA TU VIAJE</p><h2 id="services-title">Servicios del <em>hotel.</em></h2></div>
+            <p class="services-intro">Consulta qué está incluido y qué puedes solicitar durante tu visita a Huancayo.</p>
+          </div>
+          <div class="service-grid" id="service-grid" aria-live="polite" aria-busy="true"></div>
+          <p class="resource-error d-none" id="services-error" role="status"></p>
+        </div>
+      </section>
+      <section class="closing-section" aria-labelledby="closing-title"><div class="container-xl closing-inner"><div><p class="eyebrow eyebrow-light">TU LUGAR EN EL VALLE</p><h2 id="closing-title">¿Listo para elegir<br><em>dónde descansar?</em></h2></div><a class="btn btn-light-brand" href="./habitaciones.html">Ver habitaciones <span aria-hidden="true">↗</span></a></div></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container-xl footer-top">
+        <a class="brand-lockup footer-brand" href="./index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M4 29 15 12l6 9 5-7 10 15H4Z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><path d="M8 33h24M13 26h13" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></svg></span><span class="brand-name">Hotel <strong>Incontrastable</strong><small>HUANCAYO · PERÚ</small></span></a>
+        <p>Hospitalidad con esencia andina.<br>Un proyecto demostrativo con datos de ejemplo.</p>
+        <a class="footer-top-link" href="#contenido">Volver arriba ↑</a>
+      </div>
+      <div class="container-xl footer-bottom"><span>© 2026 Hotel Incontrastable · Proyecto demo</span><span>Hecho con cariño en Huancayo, Perú</span></div>
+    </footer>
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+      <div class="drawer-header"><div><p class="eyebrow">TU PRÓXIMA ESTADÍA</p><h2 id="cart-title">Tu selección</h2></div><button class="icon-button" type="button" data-close-cart aria-label="Cerrar carrito">×</button></div>
+      <div class="cart-content" id="cart-content" aria-live="polite"></div>
+      <div class="cart-summary d-none" id="cart-summary"><div class="cart-estimate"><span>Estimado por noche</span><strong id="cart-total">S/ 0</strong></div><p>El total final se calculará al ingresar las fechas. Esta simulación no procesa pagos.</p><button class="btn btn-primary-brand w-100" type="button" id="start-booking">Continuar con la reserva <span aria-hidden="true">↗</span></button></div>
+    </aside>
+    <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+      <button class="icon-button dialog-close" type="button" data-close-booking aria-label="Cerrar formulario">×</button>
+      <div class="booking-heading"><p class="eyebrow">ÚLTIMO PASO · DEMOSTRACIÓN</p><h2 id="booking-title">Prepara tu <em>estadía.</em></h2><p>Completa estos datos para ver una confirmación simulada. No se procesará un pago ni se guardará una reserva.</p></div>
+      <form id="booking-form" novalidate><div class="booking-dates"><label class="form-label" for="check-in">Llegada<input class="form-control" id="check-in" name="checkIn" type="date" required></label><label class="form-label" for="check-out">Salida<input class="form-control" id="check-out" name="checkOut" type="date" required></label></div><label class="form-label" for="booking-guests">Número de huéspedes<select class="form-select" id="booking-guests" name="guests" required></select></label><label class="form-label" for="guest-name">Nombre de contacto<input class="form-control" id="guest-name" name="name" autocomplete="name" required maxlength="80"></label><label class="form-label" for="guest-email">Correo electrónico<input class="form-control" id="guest-email" name="email" type="email" autocomplete="email" required maxlength="120"></label><p class="booking-cost" id="booking-cost"></p><p class="form-message d-none" id="booking-error" role="alert"></p><button class="btn btn-primary-brand w-100" type="submit">Simular mi reserva <span aria-hidden="true">↗</span></button></form>
+      <div class="booking-confirmation d-none" id="booking-confirmation" role="status" aria-live="polite"></div>
+    </dialog>
+    <div class="toast-message" id="toast-message" role="status" aria-live="polite"></div>
+  </body>
+</html>
