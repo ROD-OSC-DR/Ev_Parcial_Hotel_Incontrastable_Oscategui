@@ -1,9 +1,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
-COPY HotelIncontrastable.Api/HotelIncontrastable.Api.csproj HotelIncontrastable.Api/
-RUN dotnet restore HotelIncontrastable.Api/HotelIncontrastable.Api.csproj
-COPY HotelIncontrastable.Api/ HotelIncontrastable.Api/
-RUN dotnet publish HotelIncontrastable.Api/HotelIncontrastable.Api.csproj -c Release -o /app/publish /p:UseAppHost=false
+COPY backend/HotelIncontrastable.Api/HotelIncontrastable.Api.csproj backend/HotelIncontrastable.Api/
+RUN dotnet restore backend/HotelIncontrastable.Api/HotelIncontrastable.Api.csproj
+COPY backend/HotelIncontrastable.Api/ backend/HotelIncontrastable.Api/
+RUN dotnet publish backend/HotelIncontrastable.Api/HotelIncontrastable.Api.csproj -c Release -o /app/publish /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
 WORKDIR /app
