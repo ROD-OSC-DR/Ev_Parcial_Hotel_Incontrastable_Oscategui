@@ -53,6 +53,6 @@ Las reservas son una simulación del lado del cliente: se validan fechas, huésp
 
 ## Despliegue en Render
 
-El archivo `render.yaml` define la API Docker —con el contexto de compilación en la raíz del repositorio— y el sitio estático. Conecta el repositorio a Render como Blueprint y despliega ambos servicios. Render proporciona la URL de la API al build del frontend mediante `API_BASE_URL`.
+El archivo `render.yaml` define un único servicio Docker en la raíz del repositorio. El contenedor construye el frontend multipágina y la API ASP.NET Core, y sirve ambos desde el mismo origen: la página principal está en `/` y las páginas adicionales en `/habitaciones.html`, `/servicios.html` y `/promociones.html`. El frontend llama a la API con rutas relativas (`/api/...`).
 
 Los datos de la API son de ejemplo y se reinician con cada proceso; esta versión no incluye almacenamiento persistente ni autenticación.

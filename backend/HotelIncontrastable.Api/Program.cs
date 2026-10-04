@@ -14,14 +14,9 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.UseCors("PublicDemo");
 app.MapControllers();
-
-app.MapGet("/", () => Results.Ok(new
-{
-    nombre = "Hotel Incontrastable — API de demostración",
-    documentacion = "Consulta los endpoints /api/productos, /api/categorias, /api/servicios y /api/promociones.",
-    salud = "/api/salud"
-}));
 
 app.Run();

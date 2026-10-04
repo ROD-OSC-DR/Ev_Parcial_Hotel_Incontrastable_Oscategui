@@ -10,16 +10,3 @@ services:
         value: Production
       - key: ASPNETCORE_URLS
         value: http://+:8080
-
-  - type: web
-    name: hotel-incontrastable-web
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm run build
-    staticPublishPath: dist
-    envVars:
-      - key: API_BASE_URL
-        fromService:
-          type: web
-          name: hotel-incontrastable-api
-          envVarKey: RENDER_EXTERNAL_URL

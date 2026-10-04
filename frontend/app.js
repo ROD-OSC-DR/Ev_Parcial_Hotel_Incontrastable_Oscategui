@@ -741,11 +741,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 async function startApplication() {
-  if (!apiBaseUrl && elements.roomGrid) {
-    showCatalogError(new Error("Falta configurar la dirección de la API en frontend/config.js."));
-    return;
-  }
-
   restoreCart();
   renderCart();
   const requests = [loadSupportingResources()];
