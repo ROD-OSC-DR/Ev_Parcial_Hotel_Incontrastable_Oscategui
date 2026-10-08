@@ -4,7 +4,30 @@ import path from "node:path";
 
 const frontendDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDirectory = path.join(frontendDirectory, "dist");
-const apiBaseUrl = process.env.API_BASE_URL?.trim();
+const apiBaseUrl = process.env.API_BASE_URL?.trim() || undefined;
+const isVercelBuild = process.env.VERCEL === "1";
+
+if (isVercelBuild && !apiBaseUrl) {
+  throw new Error("La variable API_BASE_URL debe configurarse en el proyecto de Vercel.");
+}
+
+if (isVercelBuild && apiBaseUrl === "same-origin") {
+  throw new Error("En Vercel, API_BASE_URL debe apuntar a la API HTTPS desplegada en Render.");
+}
+
+if (isVercelBuild) {
+  let parsedApiBaseUrl;
+  try {
+    parsedApiBaseUrl = new URL(apiBaseUrl);
+  } catch {
+    throw new Error("API_BASE_URL debe ser una URL absoluta válida.");
+  }
+
+  if (parsedApiBaseUrl.protocol !== "https:") {
+    throw new Error("API_BASE_URL debe utilizar HTTPS en Vercel.");
+  }
+}
+
 const resolvedApiBaseUrl = apiBaseUrl === "same-origin" ? "" : apiBaseUrl ?? "http://localhost:5050";
 
 await rm(outputDirectory, { recursive: true, force: true });
