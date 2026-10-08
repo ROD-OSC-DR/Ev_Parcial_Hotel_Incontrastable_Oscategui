@@ -57,6 +57,8 @@ Las reservas son una simulación del lado del cliente: se validan fechas, huésp
 
 El archivo `render.yaml` define el servicio web Docker de la API, que utiliza el `Dockerfile` de la raíz y escucha en el puerto 8080. La API se publica bajo rutas como `/api/productos` y `/api/salud`; el frontend no se construye ni se sirve desde este contenedor.
 
+La ruta raíz `/` devuelve un resumen JSON de la API; no sirve el sitio web. El frontend se abrirá desde el dominio Vercel después de su despliegue.
+
 Después de desplegar el frontend en Vercel, agrega en las variables de entorno del servicio Render:
 
 - `FRONTEND_ORIGINS`: el dominio de producción asignado por Vercel, por ejemplo `https://nombre-del-proyecto.vercel.app`. Si se necesitan varios orígenes, sepáralos con comas. No incluyas una barra final.

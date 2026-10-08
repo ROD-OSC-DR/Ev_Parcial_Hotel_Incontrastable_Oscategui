@@ -475,6 +475,8 @@ La URL de la API desplegada es:
 
 <https://ev-parcial-hotel-incontrastable-oscategui.onrender.com/>
 
+La ruta raíz de Render responde con un resumen JSON de la API; el frontend no se sirve desde ese servicio y se abrirá desde el dominio de Vercel una vez desplegado.
+
 **Evidencia sugerida:** (PLACEHOLDER de imagen: captura del panel de Render mostrando el servicio activo y el despliegue exitoso; ocultar identificadores o información privada que no sea necesaria).
 
 **Evidencia sugerida:** (PLACEHOLDER de imagen: captura del proyecto desplegado en Vercel con el frontend visible y la barra de direcciones).

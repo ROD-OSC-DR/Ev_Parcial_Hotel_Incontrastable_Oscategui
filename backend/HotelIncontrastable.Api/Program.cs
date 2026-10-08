@@ -19,6 +19,12 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 app.UseCors("Frontend");
+app.MapGet("/", () => Results.Ok(new
+{
+    nombre = "Hotel Incontrastable — API de demostración",
+    documentacion = "Consulta los endpoints /api/productos, /api/categorias, /api/servicios y /api/promociones.",
+    salud = "/api/salud"
+}));
 app.MapControllers();
 
 app.Run();
